@@ -1,6 +1,35 @@
-let contador = document.getElementById('contando');
+let res = document.getElementById('res');
+let contador = 0;
 
 function btnAdicionar()
 {
-    
+    contador++;
+    res.textContent = `${contador}`;
+    atualizarCor();
+}
+
+function btnLimpar()
+{
+    contador = 0;
+    res.textContent = `${contador}`;
+    atualizarCor();
+}
+
+function btnDecremento() 
+{
+    contador--;
+    res.textContent = `${contador}`;
+    atualizarCor();
+}
+
+function atualizarCor() 
+{
+    if(contador < 0) 
+        {
+            res.style.color = "red";
+        }
+    else 
+    {
+        res.style.color = "green"
+    }
 }

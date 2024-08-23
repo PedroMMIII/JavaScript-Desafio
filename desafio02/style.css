@@ -23,12 +23,17 @@ h1
     color: #010041;
 }
 
-#contando 
+#res
 {
     text-align: center;
     padding: 10px;
     font-size: 5em;
     color: green;
+}
+
+.btnRed 
+{
+    color: red;
 }
 
 .btn 
