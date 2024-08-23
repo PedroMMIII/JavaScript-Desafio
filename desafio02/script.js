@@ -28,8 +28,12 @@ function atualizarCor()
         {
             res.style.color = "red";
         }
+    else if(contador > 0)
+    {
+        res.style.color = "green";
+    }
     else 
     {
-        res.style.color = "green"
+        res.style.color = "black";
     }
 }
