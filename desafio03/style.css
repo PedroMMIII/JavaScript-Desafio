@@ -15,7 +15,7 @@
     background-color: aliceblue;
 }
 
-.title 
+.titulo
 {
     padding-top: 30px;
     padding-bottom: 70px;
@@ -27,7 +27,7 @@ h2
     color: #000000c4;
 }
 
-.underline 
+.linha
 {
     border-top: 5px solid #7777ff;
 }
@@ -75,7 +75,7 @@ h3
     font-size: 1.3em;
 }
 
-#job 
+#trabalho
 {
     font-size: 1.2em;
     padding: 5px;
@@ -99,7 +99,7 @@ p
     transform: translateX(-100%);
 }
 
-.prev-btn, .next-btn
+.anterior-btn, .proximo-btn
 {
     background-color: white;
     border: none;
@@ -109,20 +109,20 @@ p
     cursor: pointer;
 }
 
-.prev-btn:hover 
+.anterior-btn:hover 
 {
     color: #c4c4f8d8;
     transition: all ease 0.7s;
 }
 
-.next-btn:hover 
+.proximo-btn:hover 
 {
     color: #c4c4f8d8;
     transition: all ease 0.7s;
 }
 
 
-.random-btn 
+.aleatorio-btn 
 {
     display: block;
     margin: auto;
@@ -135,7 +135,7 @@ p
     cursor: pointer;
 }
 
-.random-btn:hover 
+.aleatorio-btn:hover 
 {
     background-color: #7777ff;
     color: white;
