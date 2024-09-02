@@ -1,90 +1,84 @@
 const review = [
     {
         id: 1,
-        nome: "Ana Ribeiro",
-        trabalho: "Moda",
         img: "https://www.course-api.com/images/people/person-1.jpeg",
-        info: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate sunt nemo blanditiis obcaecati! Cupiditate vel cumque ea quos dolore quae pariatur quaerat deleniti molestias omnis odio quis, non ratione similique!",
+        nome: "Cristina Silva",
+        job: "Médica",
+        info: "Realizar consultas e atendimentos médicos; tratar pacientes; implementar ações para promoção da saúde; coordenar programas e serviços em saúde, efetuar perícias, auditorias e sindicâncias médicas; elaborar documentos e difundir conhecimentos da área médica"
     },
 
     {
         id: 2,
-        nome: "Claudia Moras",
-        trabalho: "Investimentos",
         img: "https://www.course-api.com/images/people/person-2.jpeg",
-        info: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate sunt nemo blanditiis obcaecati! Cupiditate vel cumque ea quos dolore quae pariatur quaerat deleniti molestias omnis odio quis, non ratione similique!"
+        nome: "Elaine Costa",
+        job: "Desenvolvedora Back-end",
+        info: "Ela tem a responsabilidade de planejar, programar, testar e manter a estrutura de códigos que faz a interface entre um site, o servidor e o banco de dados. Sua atuação é fundamental para garantir a eficiência e a segurança do sistema."
     },
 
     {
         id: 3,
-        nome: "Thiago Gomes",
-        trabalho: "TI",
         img: "https://www.course-api.com/images/people/person-3.jpeg",
-        info: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate sunt nemo blanditiis obcaecati! Cupiditate vel cumque ea quos dolore quae pariatur quaerat deleniti molestias omnis odio quis, non ratione similique!"
+        nome: "Thiago Gomes",
+        job: "Desenvolvedor de jogos",
+        info: "Ele responsáveis por criar e programar os elementos que compõem um jogo, como personagens, ambientes, mecânicas de jogo e interfaces interativas. Eles trabalham em equipes multidisciplinares, colaborando com artistas, designers, músicos e outros profissionais para dar vida aos jogos."
     },
 
     {
         id: 4,
-        nome: "André Silva",
-        trabalho: "Desenvolvedor de jogos",
         img: "https://www.course-api.com/images/people/person-4.jpeg",
-        info: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate sunt nemo blanditiis obcaecati! Cupiditate vel cumque ea quos dolore quae pariatur quaerat deleniti molestias omnis odio quis, non ratione similique!"
-    }
+        nome: "André Silva",
+        job: "Desenvolvedor Front-end",
+        info: "Ele é o responsável por colocar em prática, através de códigos, o design de um site ou interface. Enquanto o web design projeta o visual de um site, o desenvolvimento front-end implementa esse design através de códigos, como HTML, CSS e JavaScript."
+    },
 ]
 
-const img = document.querySelector("#pessoa-img");
-const nome = document.getElementById("nome");
-const trabalho = document.getElementById("trabalho");
-const info = document.getElementById("info");
+const img = document.getElementById('pessoa-img');
+const nome = document.getElementById('name');
+const job = document.getElementById('job');
+const info = document.getElementById('info');
 
-const btnAnterior = document.querySelector(".anterior-btn");
-const btnProximo = document.querySelector(".proximo-btn");
-const btnAleatorio = document.querySelector(".aleatorio-btn");
+const btnPrev = document.querySelector('.prev-btn');
+const btnNext = document.querySelector('.next-btn');
+const btnRandom = document.querySelector('.random-btn');
 
-let antigoItem = 0;
+let currentItem = 0;
 
-window.addEventListener('DOMContentLoaded', function() 
-{
-    const item = review[antigoItem];
+window.addEventListener('DOMContentLoaded', function() {
+    let item = review[currentItem];
     img.src = item.img;
-    nome.textContent = item.nome;
-    trabalho.textContent = item.trabalho;
+    nome.textContent = item.nome
+    job.textContent = item.job
     info.textContent = item.info;
 })
 
-function mostrarPessoa(pessoa) 
-{
-    const item = review[pessoa];
+function mostrarPessoa(pessoa) {
+    let item = review[pessoa];
     img.src = item.img;
     nome.textContent = item.nome;
-    trabalho.textContent = item.trabalho;
+    job.textContent = item.job;
     info.textContent = item.info;
 }
 
-btnProximo.addEventListener('click', function() 
-{
-    antigoItem++;
-    if(antigoItem > review.length - 1) 
+btnNext.addEventListener('click', function(){
+    currentItem++;
+    if(currentItem > review.length - 1) 
         {
-            antigoItem = 0;
+            currentItem = 0
         }
-        mostrarPessoa(antigoItem)
+        mostrarPessoa(currentItem);
 })
 
-btnAnterior.addEventListener('click', function() 
-{
-    antigoItem--;
-    if(antigoItem< 0) 
+btnPrev.addEventListener('click', function(){
+    currentItem--;
+    if(currentItem < 0) 
         {
-            antigoItem = review.length - 1;
+            currentItem = review.length - 1;
         }
-        mostrarPessoa(antigoItem);
+        mostrarPessoa(currentItem);
 })
 
-btnAleatorio.addEventListener('click', function() 
-{
-    console.log('ola')
+btnRandom.addEventListener('click', function(){
 
-    antigoItem = Math.floor(Math.random() * review.length);
-    mostrarPessoa(antigoItem);
+    currentItem = Math.floor(Math.random() * review.length);
+    mostrarPessoa(currentItem);
 })
