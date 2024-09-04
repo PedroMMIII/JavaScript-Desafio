@@ -1,0 +1,50 @@
+:root {
+    --font-titulo: "Playwrite CU", cursive;
+    --font-texto: "Roboto Mono", monospace;
+
+    --cor-background: 	#F8F8FF;
+    --cor-titulo: #a38a17;
+    --cor-neutra: #ffffff;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cor-background);
+}
+
+.container {
+    position: relative;
+    top: 160px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
+    text-align: center;
+    margin: 40px;
+    font-size: 1.7em;
+    font-family: var(--font-titulo);
+    color: var(--cor-titulo);
+}
+
+.perguntas {
+    width: 600px;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-family: var(--font-texto);
+    font-size: 1.3em;
+    background-color: var(--cor-neutra);
+    box-shadow: 2px 3px 10px 0px #0000007a;
+    border-radius: 5px;   
+}
+
+.btn-resposta {
+    
+}
